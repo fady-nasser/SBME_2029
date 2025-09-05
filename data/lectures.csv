@@ -1,0 +1,5 @@
+SubjectCode,LectureNumber,Title,Type,Date,StartTime,EndTime,Links
+SBME101,1,Introduction to Physics,Lecture,2025-09-01,09:00,10:30,"https://drive.google.com/slide1,https://youtube.com/video1"
+SBME101,2,Forces and Motion,Lecture,2025-09-08,10:45,12:15,"https://drive.google.com/slide2"
+SBME201,1,Intro to Biomechanics,Lecture,2025-09-03,11:00,12:30,"https://drive.google.com/slide3,https://youtube.com/videoBiomech"
+SBME201,1,Biomechanics Tutorial,Tutorial,2025-09-04,14:00,15:00,"https://drive.google.com/tutorialNotes"
