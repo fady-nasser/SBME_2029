@@ -1,0 +1,2 @@
+id,subject_code,title,date,time,location,covered_lectures,resources_links,notes
+PHY-M1,PHY,Midterm 1,2025-10-01,10:00,Room 201,"PHY-1-Lecture,PHY-1-Tutorial",https://drive.google.com/exercises.pdf|https://drive.google.com/summary.pdf,Chapters 1-3
