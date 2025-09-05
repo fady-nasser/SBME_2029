@@ -6,7 +6,7 @@ const Schedule = () => {
     const containerRef = useRef(null);
 
     useEffect(() => {
-        Papa.parse("/data/schedule.csv", {
+        Papa.parse("/SBME_2029/data/schedule.csv", {
             download: true,
             header: true,
             complete: (result) => {
@@ -107,6 +107,7 @@ const Schedule = () => {
                             </>
                         )}
 
+
                         {slots.map((slot, index) => {
                 const start = parseInt(slot.StartTime.split(":")[0]) * 60 + parseInt(slot.StartTime.split(":")[1]);
                 const end = parseInt(slot.EndTime.split(":")[0]) * 60 + parseInt(slot.EndTime.split(":")[1]);
@@ -132,6 +133,7 @@ const Schedule = () => {
                     >
                         <h4>{slot.Title || "Gap"}</h4>
                         <p>{slot.Type}</p>
+                        <p>{slot.Hall}</p>
                         <p>
                             {slot.StartTime} - {slot.EndTime}
                         </p>

@@ -26,9 +26,9 @@ const ClassSection = () => {
                 <div className="student-name">{student.name}</div>
                 <div className="student-headline">{student.headline}</div>
                 <div className="student-links">
-                  <a href={student.links.linkedin} className="student-link">LinkedIn ↗</a>
-                  <a href={student.links.github} className="student-link">GitHub ↗</a>
-                  <a href={student.links.cv} className="student-link">CV ↗</a>
+                  <a href={student.links.linkedin} className="student-link">LinkedIn &gt;</a>
+                  <a href={student.links.github} className="student-link">GitHub &gt;</a>
+                  <a href={student.links.cv} className="student-link">CV &gt;</a>
                 </div>
               </div>
             </div>

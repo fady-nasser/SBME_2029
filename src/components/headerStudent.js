@@ -11,8 +11,10 @@ const HeaderStudent = () => {
   return (
     <div className="header">
       <div className="nav">
+        <span onClick={() => navigate('/student')}>Home</span>
+                <span onClick={() => navigate('/study')}>Study</span>
         <span onClick={() => navigate('/tasks')}>Tasks</span>
-        <span onClick={() => navigate('/study')}>Study</span>
+
         <span onClick={() => navigate('/exams')}>Exams</span>
         <span onClick={() => navigate('/news')}>News</span>
       </div>

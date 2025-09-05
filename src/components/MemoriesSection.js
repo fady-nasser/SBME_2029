@@ -11,13 +11,13 @@ const MemoriesSection = () => {
           <div className="memory-card">
             <div className="memory-title">Dish Party</div>
             <div className="memory-date">25 Sep 2026</div>
-            <a href="#" className="memory-link">Photos ↗</a>
+            <a href="#" className="memory-link">Photos &gt;</a>
           </div>
           
           <div className="memory-card">
             <div className="memory-title">Ramadan Iftar</div>
             <div className="memory-date">15 Feb 2026</div>
-            <a href="#" className="memory-link">Photos ↗</a>
+            <a href="#" className="memory-link">Photos &gt;</a>
           </div>
         </div>
         
@@ -37,13 +37,13 @@ const MemoriesSection = () => {
           <div className="memory-card">
             <div className="memory-title">Ramadan Iftar</div>
             <div className="memory-date">15 Feb 2026</div>
-            <a href="#" className="memory-link">Photos ↗</a>
+            <a href="#" className="memory-link">Photos &gt;</a>
           </div>
           
           <div className="memory-card">
             <div className="memory-title">Ramadan Iftar</div>
             <div className="memory-date">15 Feb 2026</div>
-            <a href="#" className="memory-link">Photos ↗</a>
+            <a href="#" className="memory-link">Photos &gt;</a>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ const Announcements = () => {
   const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
-    Papa.parse("/data/announcement.csv", {
+    Papa.parse("/SBME_2029/data/announcement.csv", {
       download: true,
       header: true,
       complete: (result) => {

@@ -13,11 +13,13 @@ const StudentPage = () => {
 
       <div className="section-schedule">  <h2>Today's Schedule</h2>
       <Schedule />
+      <br/>
       </div>
     
             <div className="section announcements-section" data-section="announcements">
               <Marquee text="IMPORTANT" />
-
+              <br/>
+              <br/>
               {/* Announcements */}
               <Announcements />
 

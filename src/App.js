@@ -18,6 +18,7 @@ import Exams from "./components/Exams";
 import Tasks from "./components/Tasks";
 import Announcements from "./components/Announcements";
 import StudentPage from './components/StudentPage';
+import News from './components/News';
 
 function App() {
   // Scroll Progress Bar
@@ -94,10 +95,10 @@ function App() {
  {/* Student-only pages */}
         <Route path="/student" element={<><HeaderStudent /><StudentPage /></>} />
                 {/* <Route path="/news" element={<><HeaderStudent /><StudentPage /></>} /> */}
-        <Route path="/tasks" element={<><Tasks /></>} />
-        <Route path="/study" element={<><Study /></>} />
-        <Route path="/exams" element={<><Exams /></>} />
-        <Route path="/news" element={<><Announcements /></>} />
+        <Route path="/tasks" element={<><HeaderStudent /><Tasks /></>} />
+        <Route path="/study" element={<><HeaderStudent /><Study /></>} />
+        <Route path="/exams" element={<><HeaderStudent /><Exams /></>} />
+        <Route path="/news" element={<><HeaderStudent /><News /></>} />
         {/* <Route path="/schedule" element={<Schedule />} />
         <Route path="/study" element={<Study />} />
         <Route path="/exams" element={<Exams />} />
