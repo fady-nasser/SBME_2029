@@ -1,5 +1,7 @@
-SubjectCode,LectureNumber,Title,Type,Date,StartTime,EndTime,Links
-SBME101,1,Introduction to Physics,Lecture,2025-09-01,09:00,10:30,"https://drive.google.com/slide1,https://youtube.com/video1"
-SBME101,2,Forces and Motion,Lecture,2025-09-08,10:45,12:15,"https://drive.google.com/slide2"
-SBME201,1,Intro to Biomechanics,Lecture,2025-09-03,11:00,12:30,"https://drive.google.com/slide3,https://youtube.com/videoBiomech"
-SBME201,1,Biomechanics Tutorial,Tutorial,2025-09-04,14:00,15:00,"https://drive.google.com/tutorialNotes"
+Semester,Week,SubjectCode,SubjectName,Chapter,LectureNumber,LectureTitle,VideoLink,ResourceLinks,ReferenceSection
+1,1,PHYS101,Physics,Ch1,1,Motion Basics,https://www.youtube.com/embed/abcd1234,https://drive.google.com/file1;https://drive.google.com/file2,Sec 1.1–1.3
+1,1,BIOM101,Biomechanics,Ch1,1,Intro to Biomech,https://www.youtube.com/embed/efgh5678,https://drive.google.com/file3,Sec 2.1–2.2
+1,2,PHYS101,Physics,Ch1,2,Motion Continued,https://www.youtube.com/embed/ijkl9012,https://drive.google.com/file4,Sec 1.4–1.5
+1,2,BIOM101,Biomechanics,Ch2,1,Tissue Mechanics,https://www.youtube.com/embed/mnop3456,https://drive.google.com/file5;https://drive.google.com/file6,Sec 3.1–3.3
+2,2,PHYS101,Physics,Ch1,2,Motion Continued,https://www.youtube.com/embed/ijkl9012,https://drive.google.com/file4,Sec 1.4–1.5
+2,2,BIOM101,ode,Ch2,1,Tissue Mechanics,https://www.youtube.com/embed/mnop3456,https://drive.google.com/file5;https://drive.google.com/file6,Sec 3.1–3.3
