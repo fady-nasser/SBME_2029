@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SBME_2029/static/css/main.cb191251.css",
+    "main.css": "/SBME_2029/static/css/main.ccd519d8.css",
     "main.js": "/SBME_2029/static/js/main.f4eea205.js",
     "static/media/Vector 1.png": "/SBME_2029/static/media/Vector 1.9b844626a76fe778bd01.png",
     "index.html": "/SBME_2029/index.html",
-    "main.cb191251.css.map": "/SBME_2029/static/css/main.cb191251.css.map",
+    "main.ccd519d8.css.map": "/SBME_2029/static/css/main.ccd519d8.css.map",
     "main.f4eea205.js.map": "/SBME_2029/static/js/main.f4eea205.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb191251.css",
+    "static/css/main.ccd519d8.css",
     "static/js/main.f4eea205.js"
   ]
 }
