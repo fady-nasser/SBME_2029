@@ -1,7 +1,0 @@
-Semester,Week,SubjectCode,SubjectName,Chapter,LectureNumber,LectureTitle,VideoLink,ResourceLinks,ReferenceSection
-1,1,PHYS101,Physics,Ch1,1,Motion Basics,https://www.youtube.com/embed/abcd1234,https://drive.google.com/file1;https://drive.google.com/file2,Sec 1.1–1.3
-1,1,BIOM101,Biomechanics,Ch1,1,Intro to Biomech,https://www.youtube.com/embed/efgh5678,https://drive.google.com/file3,Sec 2.1–2.2
-1,2,PHYS101,Physics,Ch1,2,Motion Continued,https://www.youtube.com/embed/ijkl9012,https://drive.google.com/file4,Sec 1.4–1.5
-1,2,BIOM101,Biomechanics,Ch2,1,Tissue Mechanics,https://www.youtube.com/embed/mnop3456,https://drive.google.com/file5;https://drive.google.com/file6,Sec 3.1–3.3
-2,2,PHYS101,Physics,Ch1,2,Motion Continued,https://www.youtube.com/embed/ijkl9012,https://drive.google.com/file4,Sec 1.4–1.5
-2,2,BIOM101,ode,Ch2,1,Tissue Mechanics,https://www.youtube.com/embed/mnop3456,https://drive.google.com/file5;https://drive.google.com/file6,Sec 3.1–3.3
