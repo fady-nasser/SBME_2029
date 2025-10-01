@@ -12,14 +12,15 @@ import './styles/App.css';
 import { Routes, Route } from "react-router-dom";
 
 
-// import Schedule from "./components/Schedule";
 import Study from "./components/Study";
 import Exams from "./components/Exams";
 import Tasks from "./components/Tasks";
 import Announcements from "./components/Announcements";
 import StudentPage from './components/StudentPage';
 import News from './components/News';
-
+import CardGrid from './components/CardGrid';
+import LectureDetail from './components/LectureDetail';
+import LecturePage from './components/LecturePage';
 function App() {
   // Scroll Progress Bar
   const updateProgressBar = () => {
@@ -75,12 +76,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{ width: '100%', overflowX: 'hidden' }}>
 
       <Routes>
         {/* Landing page (outsiders) */}
         <Route
-          path="/"
+          path="/guest"
           element={
             <>
                     <ProgressBar />
@@ -92,18 +93,17 @@ function App() {
             </>
           }
         />
- {/* Student-only pages */}
-        <Route path="/student" element={<><HeaderStudent /><StudentPage /></>} />
-                {/* <Route path="/news" element={<><HeaderStudent /><StudentPage /></>} /> */}
+        {/* Student-only pages */}
+        <Route path="/" element={<><HeaderStudent /><StudentPage /></>} />
         <Route path="/tasks" element={<><HeaderStudent /><Tasks /></>} />
         <Route path="/study" element={<><HeaderStudent /><Study /></>} />
         <Route path="/exams" element={<><HeaderStudent /><Exams /></>} />
         <Route path="/news" element={<><HeaderStudent /><News /></>} />
-        {/* <Route path="/schedule" element={<Schedule />} />
-        <Route path="/study" element={<Study />} />
-        <Route path="/exams" element={<Exams />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/announcements" element={<Announcements />} /> */}
+
+        {/* Lecture details */}
+        <Route path="/lectures"
+               element={<LecturePage />}
+        />
       </Routes>
     </div>
   );

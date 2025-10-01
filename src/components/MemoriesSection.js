@@ -6,47 +6,88 @@ const MemoriesSection = () => {
     <div className="section memories-section" data-section="memories">
       <Marquee text="MEMORIES" />
       
-      <div className="memories-content">
-        <div className="memory-cards-top">
-          <div className="memory-card">
-            <div className="memory-title">Dish Party</div>
-            <div className="memory-date">25 Sep 2026</div>
-            <a href="#" className="memory-link">Photos &gt;</a>
-          </div>
-          
-          <div className="memory-card">
-            <div className="memory-title">Ramadan Iftar</div>
-            <div className="memory-date">15 Feb 2026</div>
-            <a href="#" className="memory-link">Photos &gt;</a>
-          </div>
-        </div>
-        
-        <div className="timeline-container">
-          <div className="timeline-line"></div>
-          <div className="timeline-points">
-            <div className="timeline-point" data-event="1"></div>
-            <div className="timeline-point" data-event="2"></div>
-            <div className="timeline-point" data-event="3"></div>
-            <div className="timeline-point" data-event="4"></div>
-            <div className="timeline-point" data-event="5"></div>
-            <div className="timeline-point" data-event="6"></div>
-          </div>
-        </div>
-        
-        <div className="memory-cards-bottom">
-          <div className="memory-card">
-            <div className="memory-title">Ramadan Iftar</div>
-            <div className="memory-date">15 Feb 2026</div>
-            <a href="#" className="memory-link">Photos &gt;</a>
-          </div>
-          
-          <div className="memory-card">
-            <div className="memory-title">Ramadan Iftar</div>
-            <div className="memory-date">15 Feb 2026</div>
-            <a href="#" className="memory-link">Photos &gt;</a>
-          </div>
+  <div className="timeline-container">
+    <div className="timeline">
+      <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Ramadan Iftar</h4>
+          <p>Jan 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
         </div>
       </div>
+      <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>First month dish party</h4>
+          <p>Feb 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+      <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 3</h4>
+          <p>Mar 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+      <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 4</h4>
+          <p>Apr 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+
+        <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 4</h4>
+          <p>Apr 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+        <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 4</h4>
+          <p>Apr 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+        <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 4</h4>
+          <p>Apr 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+        <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 4</h4>
+          <p>Apr 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+        <div className="event">
+        <div className="dot"></div>
+        <div className="card">
+          <h4>Event 4</h4>
+          <p>Apr 2025</p>
+          <a href="#" className="memory-link">Photos &gt;</a>
+        </div>
+      </div>
+    
+    <div className="timeline-line" ></div>
+    </div>
+
+   
+  </div>
+
     </div>
   );
 };

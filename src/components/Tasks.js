@@ -2,27 +2,36 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse"; // library for parsing CSV
 import Marquee from "./Marquee";
+import useCachedCSV from "./utils/useCachedCSV";
 function Tasks() {
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
   // Load CSV
-  useEffect(() => {
-    fetch("/SBME_2029/data/tasks.csv")
-      .then((response) => response.text())
-      .then((csvText) => {
-        const parsed = Papa.parse(csvText, { header: true });
-        let taskData = parsed.data.map((task) => ({
-          title: task.title,
-          subject: task.subject,
-          dueDate: new Date(task.dueDate),
-          detailsLink: task.detailsLink,
-        }));
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetch("https://docs.google.com/spreadsheets/d/1Ep5hi5ED-y5LsS6dJE5_Tw3i69SPhneHR2ZDJbtGbgA/export?format=csv")
+  //     .then((response) => response.text())
+  //     .then((csvText) => {
+  //       const parsed = Papa.parse(csvText, { header: true });
+  //       let taskData = parsed.data.map((task) => ({
+  //         title: task.title,
+  //         subject: task.subject,
+  //         dueDate: new Date(task.dueDate),
+  //         detailsLink: task.detailsLink,
+          
+  //       }));
 
-        // Sort by due date
-        taskData = taskData.sort((a, b) => a.dueDate - b.dueDate);
-        setTasks(taskData);
-      });
-  }, []);
+  //       // Sort by due date
+  //       taskData = taskData.sort((a, b) => a.dueDate - b.dueDate);
+  //       setTasks(taskData);
+  //       setLoading(false);
+  //     });
+  // }, []);
+    const CSV_URL = "https://docs.google.com/spreadsheets/d/1Ep5hi5ED-y5LsS6dJE5_Tw3i69SPhneHR2ZDJbtGbgA/export?format=csv"
+    const { data, loading, error, lastUpdated } = useCachedCSV(CSV_URL, {
+      cacheKey: "tasks",
+    });
 
   // Countdown helper
   const getCountdown = (dueDate) => {
@@ -37,12 +46,20 @@ function Tasks() {
     return `${days}d ${hours}h ${minutes}m left`;
   };
 
+  const tasks = (data || []).map((task) => ({
+          title: task.title,
+          subject: task.subject,
+          dueDate: new Date(task.dueDate),
+          detailsLink: task.detailsLink,
+  })).sort((a,b) => a.dueDate-b.dueDate);
+
   return (
     <div style={{marginTop:"20px"}}>
-    <Marquee text="TASKS" />
+      {/* <Marquee text="TASKS" /> */}
+    <div style={{marginTop:"20px", display: "flex", alignItems: "center", flexDirection: "column"}}>
+    
     <br/>
-      
-      <div className="task-list">
+    {data?(<div className="task-list">
     
           {tasks.map((task, index) => (
         <div
@@ -67,8 +84,17 @@ function Tasks() {
 
         </div>
       ))}
-      </div>
-    
+      </div>):(
+        !loading && <p>No data found</p>
+      )}
+                  {loading && !data && <p>Loading...</p>}
+    {error && !data && <p>Error: {error}</p>}
+    {lastUpdated && (
+      <p style={{fontSize: "14px", color: "#ccc"}}>Last Update: {new Date(lastUpdated).toLocaleString()}</p>
+    )}
+    </div>
+    <br />
+    <br />
     </div>
   );
 }

@@ -19,19 +19,11 @@ const StudentPage = () => {
             <div className="section announcements-section" data-section="announcements">
               <Marquee text="IMPORTANT" />
               <br/>
-              <br/>
               {/* Announcements */}
               <Announcements />
 
             </div>
       
-      {/* Exams */}
-      {/* <h2>Upcoming Exams</h2>
-      <Exams /> */}
-
-      {/* Lectures */}
-      {/* <h2>Lectures</h2>
-      <Lectures /> */}
     </div>
   );
 };

@@ -1,0 +1,26 @@
+{
+  "short_name": "SBME2029",
+  "name": "SBME 2029 Class Website",
+  "icons": [
+    {
+      "src": "/SBME_2029/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/SBME_2029/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+        "src": "/SBME_2029/apple-touch-icon.png",
+        "sizes": "180x180",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/SBME_2029/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

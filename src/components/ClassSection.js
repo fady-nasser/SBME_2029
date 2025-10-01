@@ -4,8 +4,8 @@ import Marquee from './Marquee';
 const ClassSection = () => {
   // This would typically come from a data file or API
   const students = Array(60).fill({
-    name: "Seifeldin Amr",
-    headline: "Headline",
+    name: "Full Name",
+    headline: "Interested in ....",
     links: {
       linkedin: "#",
       github: "#",
@@ -21,7 +21,6 @@ const ClassSection = () => {
         <div className="student-cards-container">
           {students.map((student, index) => (
             <div key={index} className="student-card">
-              <div className="student-avatar"></div>
               <div className="student-info">
                 <div className="student-name">{student.name}</div>
                 <div className="student-headline">{student.headline}</div>

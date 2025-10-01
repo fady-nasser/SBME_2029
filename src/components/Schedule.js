@@ -1,21 +1,42 @@
 import React, { useState, useEffect, useRef } from "react";
 import Papa from "papaparse";
+import useCachedCSV from "./utils/useCachedCSV";
 
 const Schedule = () => {
     const [slots, setSlots] = useState([]);
     const containerRef = useRef(null);
+    // const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        Papa.parse("/SBME_2029/data/schedule.csv", {
-            download: true,
-            header: true,
-            complete: (result) => {
-                const today = "Monday";
-                const todaySlots = result.data.filter((row) => row.Day === today);
-                setSlots(todaySlots);
-            },
-        });
-    }, []);
+    // useEffect(() => {
+    //     setLoading(true);
+    //     Papa.parse("https://docs.google.com/spreadsheets/d/1JZYv5gQYE7LSgoOPGAYFCYBuWYCeI9RLge32EOdgn_k/export?format=csv", {
+    //         download: true,
+    //         header: true,
+    //         complete: (result) => {
+    //             const today = "Monday";
+    //             const todaySlots = result.data.filter((row) => row.Day === today);
+    //             setSlots(todaySlots);
+    //             setLoading(false);
+    //         },
+    //     });
+    // }, []);
+
+    const CSV_URL = "https://docs.google.com/spreadsheets/d/1JZYv5gQYE7LSgoOPGAYFCYBuWYCeI9RLge32EOdgn_k/export?format=csv"
+    const { data, loading, error, lastUpdated } = useCachedCSV(CSV_URL, {
+      cacheKey: "schedule",
+    });
+    
+    // console.log("ahhhh" + data + "a" + new Date().toLocaleDateString("en-US", {weekday: "long"}));
+    useEffect(() =>{
+        if((data||[]).length > 0)
+        {
+            const today = new Date().toLocaleDateString("en-US", {weekday: "long"});
+            // const today = "Monday"
+            const todaySlots = data.filter((row) => row.Day === today);
+            setSlots(todaySlots);
+        }
+    }, [data])
+
 
     const getCurrentTimeMinutes = () => {
         const now = new Date();
@@ -59,7 +80,7 @@ const Schedule = () => {
             className="schedule-container"
             style={{
                 display: "flex",
-                overflowX: "auto",
+                overflowX: "hidden",
                 position: "relative",
                 paddingBottom: "20px",
                 minHeight: "180px",
@@ -67,8 +88,9 @@ const Schedule = () => {
             }}
             ref={containerRef}
         >
-            {/* Vertical time bar */}
-            {slots.length > 0 && (
+            {data?(
+            <>
+                        {slots.length > 0 && (
                 <>
                     <div
                         style={{
@@ -79,7 +101,7 @@ const Schedule = () => {
                                 ? `${(barLeftPercent / 100) * containerRef.current.offsetWidth}px`
                                 : `calc(${barLeftPercent}% )`,
                                         width: "4px",
-                                        background: "#800080",
+                                        background: "var(--theme-color)",
                                         zIndex: 2,
                                         pointerEvents: "none",
                                         transition: "left 0.5s linear"
@@ -97,7 +119,7 @@ const Schedule = () => {
                                 : `calc(${barLeftPercent}% - 6px )`,
                                         width: "16px",
                                         height: "16px",
-                                        background: "#800080",
+                                        background: "var(--theme-color)",
                                         borderRadius: "50%",
                                         zIndex: 100,
                                         pointerEvents: "none",
@@ -119,13 +141,13 @@ const Schedule = () => {
                         key={index}
                         style={{
                             minWidth: "200px",
-                            border: "2px solid #800080",
+                            border: "2px solid var(--theme-color)",
                             borderRadius: "20px",
                             margin: "5px",
                             marginTop: "20px",
                             padding: "10px",
-                            backgroundColor: isCurrent ? "#fff" : "#800080",
-                            color: isCurrent ? "#800080" : "#fff",
+                            backgroundColor: isCurrent ? "#fff" : "var(--theme-color)",
+                            color: isCurrent ? "var(--theme-color)" : "#fff",
                             position: "relative",
                             zIndex: 1,
                             width: `${(getSlotDuration(slot) / minDuration) * 200}px`,
@@ -140,6 +162,16 @@ const Schedule = () => {
                     </div>
                 );
             })}
+            </>
+
+
+
+
+
+            ):( !loading && <p>No data found</p>)}
+            {/* Vertical time bar */}
+
+
         </div>
         </div>
 
